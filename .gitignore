@@ -1,2 +1,7 @@
+.idea
+.idea/*
+.idea/libraries
+.idea/workspace.xml
+/.idea/workspace.xml
+*.log
 *.iml
-
