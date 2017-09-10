@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.hamcrest.CoreMatchers.is;
+
 /**
  * Created by Dmitriy on 07.09.2017.
  */
@@ -26,17 +28,30 @@ public class ParentPage {
 
     /**
      * Method opens url
+     *
      * @param url
      */
-    public void open(String url){ //создаем метод open и в него передаем Тип String с именем url
+    public void open(String url) { //создаем метод open и в него передаем Тип String с именем url
         try {
             webDriver.get(url); //открываем страницу
             logger.info("Page was opened" + url);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("Page can not opened" + url);
             //Assert.fail пишет текст в junit ЛОГ который будет использоваться для отчетов, и помимо этого он тест останавливает
             //Assert любой из них при негативном тесте завершает работы теста и пишет красным
             Assert.fail("Page can not opened" + url);
         }
+    }
+
+    public void checkTitle(String expectedTitle) { //Метод ищет title
+        try {
+            Assert.assertThat("Title not matched", webDriver.getTitle(), is(expectedTitle));
+        } catch (Exception e) {
+            logger.error("Can not work with page");
+            Assert.fail("Can not work with page");
+        }
+    }
+    public void checkTitleH1PresentOnPagewithText(String text) {
+        actionWithOurElements.checkTextInElement(".//*/h1[contains(text(),'Your personal information')]", text);
     }
 }
