@@ -70,4 +70,14 @@ public class LoginPage extends ParentPage {
 
         return actionWithOurElements.isElementPresent(".//h1[@class='title-lv1 margin-vertical size28 u-alignCenter']");
     }
+
+    public void loginUser(String login, String password) { //Метод который будет работать с тестом ProfileInfo
+
+        openLoginPage();
+        clickOnLogin();
+        enterLoginToInput(login);
+        enterPasswordToInput(password);
+        clickOnSubmitButton();
+        checkTitle("Dashboard | BlaBlaCar.co.uk");
+    }
 }
