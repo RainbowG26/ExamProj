@@ -30,6 +30,7 @@ public class ParentTest {
     public HomePage homePage; //обьявили переменную homePage
     public ProfilePage profilePage;
 
+
     //Конструктор передает во внутрь класса, настроить обьект. передаем обьект с одного класса в другом
     //работай с обьектом этого класса
     public ParentTest() {
@@ -59,7 +60,7 @@ public class ParentTest {
     public void tearDown() {
         if (!(webDriver == null)) { //Если дравера нету но ничего закрывать
             utils.screenShot(pathToScreenShot, webDriver); //при каждом закрытии драйвера снимать скрин
-            //webDriver.quit();
+            webDriver.quit();
         }
     }
     /**

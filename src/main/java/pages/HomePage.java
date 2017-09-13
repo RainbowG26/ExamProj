@@ -18,6 +18,12 @@ public class HomePage extends ParentPage {
     @FindBy(xpath = ".//a[@class='profile']")
     private WebElement subMenuProfile;
 
+    @FindBy(xpath =".//a[@href='/search-car-sharing']")
+    private WebElement findARide;
+
+    @FindBy(xpath = ".//a[@href='/logout']")
+    private WebElement subMenuLoqout;
+
     public HomePage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -28,12 +34,18 @@ public class HomePage extends ParentPage {
     }
 
     public void clickOnMenuSettings() {
-
         actionWithOurElements.clickOnElement(menuSettings);
     }
 
     public void clickOnSubMenuProfile() {
-
         actionWithOurElements.clickOnElement(subMenuProfile);
+    }
+
+    public void clickOnButtonfindARide(){
+        actionWithOurElements.clickOnElement(findARide);
+    }
+
+    public void clickOnSubMenuLogout(){
+        actionWithOurElements.clickOnElement(subMenuLoqout);
     }
 }

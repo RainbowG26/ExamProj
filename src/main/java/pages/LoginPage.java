@@ -27,8 +27,7 @@ public class LoginPage extends ParentPage {
     }
 
     public void openLoginPage() {
-        //Вызов метода open который открывает url
-        open("https://www.blablacar.co.uk/");
+        open(" https://www.blablacar.co.uk/");
     }
 
     public void clickOnLogin() {
@@ -41,20 +40,13 @@ public class LoginPage extends ParentPage {
      */
     public void enterLoginToInput(String login) {
         actionWithOurElements.enterText(loginInput, login);
-        //       try {
-        //           loginInput.sendKeys(login);
-        //webDriver.findElement(By.xpath(".//input[@class='form-control' and @placeholder='Email']")).sendKeys(login);
-        //          logger.info(login + " was inputed into Input Login");
-        //     } catch (Exception e) {
-        //         logger.error("Can not work with input");
-        //         Assert.fail("Can not work with input");
     }
 
     /**
      * Method input Password to input
      * @param password
      */
-    public void enterPasswordToInput(String password){ //метод который будет передавать пароль
+    public void enterPasswordToInput(String password){
         actionWithOurElements.enterText(inputPass, password);
 
     }
@@ -79,5 +71,13 @@ public class LoginPage extends ParentPage {
         enterPasswordToInput(password);
         clickOnSubmitButton();
         checkTitle("Dashboard | BlaBlaCar.co.uk");
+    }
+
+    public boolean checkTextInLoginForm(String text) {
+        return actionWithOurElements.checkTextInElementBoolean(".//a[@href='/login']", text);
+    }
+
+    public boolean checkLoginTest(String text){
+        return actionWithOurElements.checkTextInElementBoolean(".//h2[@class='pull-left']", text);
     }
 }
