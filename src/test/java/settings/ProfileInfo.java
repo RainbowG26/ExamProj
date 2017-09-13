@@ -7,8 +7,9 @@ import parentTest.ParentTest;
  * Created by Dmitriy on 09.09.2017.
  */
 public class ProfileInfo extends ParentTest {
+
     @Test
-    public void profileInfo() { //Метод работает с страницой Словари Запчасти
+    public void profileInfo() { //Метод работает с страницой ProfileInfo
         loginPage.loginUser("dim8035@gmail.com", "dimag262017");
         profilePage.checkTitle("Dashboard | BlaBlaCar.co.uk");
         homePage.clickOnMenuSettings();

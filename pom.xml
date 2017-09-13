@@ -33,4 +33,11 @@
       <version>4.12</version>
     </dependency>
   </dependencies>
+  <build>
+    <resources>
+      <resource>
+        <directory>../ExamProj/src</directory>
+      </resource>
+    </resources>
+  </build>
 </project>

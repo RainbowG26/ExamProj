@@ -44,7 +44,7 @@ public class ProfilePage extends ParentPage {
         actionWithOurElements.enterText(editFirstName, firstName);
     }
 
-    public void enterLastName(String LastName) {//метод которий передаст елемент и текст куда ввести
+    public void enterLastName(String LastName) {
         actionWithOurElements.enterText(editLastName, LastName);
     }
 
@@ -92,7 +92,7 @@ public class ProfilePage extends ParentPage {
         actionWithOurElements.clearTextElement(editPhoneNumber2);
     }
 
-    public boolean isTextInList(String textOfProfile) { //.//*/h1[contains(text(),'Your personal information')]
+    public boolean isTextInList(String textOfProfile) {
         return actionWithOurElements.isElementPresent(".//*/h1[contains(text(),'" + textOfProfile + "')]");
     }
 }

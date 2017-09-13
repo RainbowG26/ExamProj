@@ -34,21 +34,21 @@ public class ParentPage {
     public void open(String url) { //создаем метод open и в него передаем Тип String с именем url
         try {
             webDriver.get(url); //открываем страницу
-            logger.info("Page was opened" + url);
+            logger.info(" Page was opened" + url);
         } catch (Exception e) {
-            logger.error("Page can not opened" + url);
+            logger.error(" Page can not opened" + url);
             //Assert.fail пишет текст в junit ЛОГ который будет использоваться для отчетов, и помимо этого он тест останавливает
             //Assert любой из них при негативном тесте завершает работы теста и пишет красным
-            Assert.fail("Page can not opened" + url);
+            Assert.fail(" Page can not opened" + url);
         }
     }
 
     public void checkTitle(String expectedTitle) { //Метод ищет title
         try {
-            Assert.assertThat("Title not matched", webDriver.getTitle(), is(expectedTitle));
+            Assert.assertThat(" Title not matched", webDriver.getTitle(), is(expectedTitle));
         } catch (Exception e) {
-            logger.error("Can not work with page");
-            Assert.fail("Can not work with page");
+            logger.error(" Can not work with page");
+            Assert.fail(" Can not work with page");
         }
     }
     public void checkTitleH1PresentOnPagewithText(String text) {
