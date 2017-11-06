@@ -33,4 +33,12 @@
       <version>4.12</version>
     </dependency>
   </dependencies>
+  <!--Path to resources log4j-->
+  <build>
+    <resources>
+      <resource>
+        <directory>src</directory>
+      </resource>
+    </resources>
+  </build>
 </project>
